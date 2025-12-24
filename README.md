@@ -59,16 +59,20 @@ The training loss decreases steadily during training:
 
 This indicates that the model successfully learns to reconstruct the input images.
 
+![AutoEncoder MSE Loss](results/MSE_Losses.png)
+
 Visually, the reconstructed digits are sharp and very similar to the original MNIST images.
 
-**Conclusion (AE):**
+![Latent Space AutoEncoder](results/latent_ae.png)
+
+**Conclusion (AE):**  
 The Autoencoder performs well in image reconstruction but does not enforce any structure on the latent space.
 
 ---
 
 ### Variational Autoencoder (VAE)
 
-The Variational Autoencoder introduces a probabilistic latent space.
+The Variational Autoencoder introduces a probabilistic latent space.  
 The encoder outputs:
 - Mean (μ)
 - Log-variance (log σ²)
@@ -92,9 +96,13 @@ Observed training behavior:
 - Total loss decreases from ~22610 to ~13497
 - KL divergence increases and stabilizes around ~3360
 
-The reconstructed images are smoother than those of the Autoencoder.
+![VAE Loss and KL Divergence](results/VAE_Losses.png)
 
-**Conclusion (VAE):**
+The reconstructed images are smoother than those of the AutoEncoder.
+
+![Latent Space VAE](results/latent_vae.png)
+
+**Conclusion (VAE):**  
 The KL divergence enforces a structured and continuous latent space, making the VAE more suitable for generation and interpolation, at the cost of slightly blurrier reconstructions.
 
 ---
@@ -136,6 +144,8 @@ During training:
 
 This oscillatory behavior is expected in GAN training due to the adversarial optimization process.
 
+![GAN Training Losses](results/gan_losses.png)
+
 ---
 
 ### Generated Images Analysis
@@ -144,6 +154,8 @@ The generated images show:
 - Coherent color distributions
 - Smooth abstract textures
 - Global similarity to the original dataset
+
+![GAN Generated Images](results/gan_generated_images.png)
 
 However:
 - Fine details remain blurry
